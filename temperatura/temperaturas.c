@@ -116,11 +116,17 @@ void cambiarVal(float temperaturas[N])
 
 int main()
 {
-    int i;
-    float temperaturas[N];
-    cerear(temperaturas);
-    carga(temperaturas);
-    muestra(temperaturas);
-    menorTemp(temperaturas);
-    mayorTemp(temperaturas);
+    int bandera = 1;
+    do
+    {
+        float temperaturas[N];
+        cerear(temperaturas);
+        carga(temperaturas);
+        muestra(temperaturas);
+        menorTemp(temperaturas);
+        mayorTemp(temperaturas);
+        printf("\n¿Desea continuar?\n 1 para continuar \n 0 para cancelar \n");
+        scanf("%d", &bandera);
+    } while (bandera == 1);
+    return 0;
 }
