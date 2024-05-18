@@ -117,9 +117,10 @@ void cambiarVal(float temperaturas[N])
 int main()
 {
     int bandera = 1;
+    float temperaturas[N];
+
     do
     {
-        float temperaturas[N];
         cerear(temperaturas);
         carga(temperaturas);
         muestra(temperaturas);
