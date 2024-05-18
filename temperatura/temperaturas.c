@@ -37,7 +37,15 @@ void muestra(float temperaturas[N])
     {
         if ((i + 1) % 2 != 0)
         {
-            printf("%f \n", temperaturas[i]);
+            printf("La temperatura registrada el dia %d es: ", i + 1);
+            if (temperaturas[i] != -999)
+            {
+                printf("%f \n", temperaturas[i]);
+            }
+            else
+            {
+                printf("Este dia no tiene temperatura cargada \n");
+            }
         }
     }
     return;
