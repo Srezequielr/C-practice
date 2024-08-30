@@ -21,22 +21,22 @@ void mostrar(int xArr[N], int i)
     }
 }
 
-int contarPoN(int xArr[N], int i, int xContP, int &xContN)
+void contarPoN(int xArr[N], int i, int &xContP, int &xContN)
 {
-    if (i != N)
+    if (i < N)
     {
         if (xArr[i] >= 0)
         {
-            contarPoN(xArr, i + 1, xContP + 1, xContN);
+            xContP++;
+            contarPoN(xArr, i + 1, xContP, xContN);
         }
         else
         {
             xContN++;
-            contarPoN(xArr, i+1, xContP, xContN);
+            contarPoN(xArr, i + 1, xContP, xContN);
         }
-    } else{
-        return xContP;
     }
+    return;
 }
 
 int main()
@@ -44,7 +44,7 @@ int main()
     int arr[N], i = 0, contP = 0, contN = 0;
     carga(arr, i);
     mostrar(arr, i);
-    contN = contarPoN(arr, i, contP, contN);
+    contarPoN(arr, i, contP, contN);
 
-    printf("La cantidad e numeros negativos es de %d y de positivos es de %d", contN, contP);
+    printf("La cantidad de numeros negativos es de %d y de positivos es de %d", contN, contP);
 }
