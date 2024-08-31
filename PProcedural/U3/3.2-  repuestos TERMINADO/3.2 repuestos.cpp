@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#define N 5
+#define N 250
 
-
-struct Articulo{
+struct Articulo
+{
     int codArt;
     char nombre[20];
     float precio;
@@ -28,9 +28,11 @@ y cuantos tienen un precio mayor a $7000.
 
 4. Indicar para cada artículo el monto total obtenido por ventas.*/
 
-void carga(struct Articulo articulos[N]){
+void carga(struct Articulo articulos[N])
+{
     int i;
-    for(i = 0; i < N; i++){
+    for (i = 0; i < N; i++)
+    {
         printf("Ingrese nombre del producto nro %d: ", i + 1);
         scanf("%s", &articulos[i].nombre);
         printf("Ingrese precio del articulo: ");
@@ -42,31 +44,38 @@ void carga(struct Articulo articulos[N]){
     return;
 }
 
-
-
-void caja(struct Articulo articulos[N]){
+void caja(struct Articulo articulos[N])
+{
     int cant, bandera = 0, i = 0;
     char nombre[20];
     printf("Ingrese nombre del producto vendido (finalizar con 'fin'): ");
     scanf("%s", &nombre);
-    while(strcmp(nombre, "fin") != 0){
-        while(strcmp(nombre, articulos[i].nombre) != 0 && i < N){
+    while (strcmp(nombre, "fin") != 0)
+    {
+        while (strcmp(nombre, articulos[i].nombre) != 0 && i < N)
+        {
             i++;
         }
-        if(i >= N){
+        if (i >= N)
+        {
             printf("iteracion detenida en: %d \n", i);
             printf("El producto que quiere vender no existe, intente de nuevo \n");
-        } else{
+        }
+        else
+        {
             printf("Ingrese unidades vendidas ");
             scanf("%d", &cant);
-            if(cant > articulos[i].stock){
+            if (cant > articulos[i].stock)
+            {
                 printf("No hay stock suficiente \n");
-            } else{
+            }
+            else
+            {
                 articulos[i].stock = articulos[i].stock - cant;
                 articulos[i].ventas = articulos[i].ventas + cant;
                 printf("�Venta exitosa! \n Stock restante: %d \n", articulos[i].stock);
             }
-           // printf("El producto encontrado tiene ID de %d", i);
+            // printf("El producto encontrado tiene ID de %d", i);
         }
         printf("Ingrese nombre del producto vendido (finalizar con 'fin'): ");
         scanf("%s", &nombre);
@@ -74,7 +83,8 @@ void caja(struct Articulo articulos[N]){
     return;
 }
 
-void menu(){
+void menu()
+{
     printf("Fiat Rochi \n");
     printf("1: Cargar producto \n");
     printf("2: Registrar venta \n");
@@ -84,48 +94,93 @@ void menu(){
     return;
 }
 
-void noStockPSieteMil(struct Articulo articulos[N], int &precMasSieteMil, int &noStock){
+void noStockPSieteMil(struct Articulo articulos[N], int &precMasSieteMil, int &noStock)
+{
     int i;
 
-    for(i = 0; i < N; i++){
-        if(articulos[i].stock == 0){
+    for (i = 0; i < N; i++)
+    {
+        if (articulos[i].stock == 0)
+        {
             noStock++;
         }
-        if(articulos[i].precio > 7000){
+        if (articulos[i].precio > 7000)
+        {
             precMasSieteMil++;
         }
     }
 }
 
+void mayorStock(Articulo articulos[N])
+{
+    int k, i, cota;
+    Articulo aux;
+    cota = N - 1;
+    k = 1;
+    while (k != -1)
+    {
+        k = -1;
+        for (i = 0; i < cota; i++)
+        {
+            if (articulos[i].stock < articulos[i + 1].stock)
+            {
+                aux = articulos[i];
+                articulos[i] = articulos[i + 1];
+                articulos[i + 1] = aux;
+                k = i;
+            }
+        }
+        cota = k;
+    }
 
-int main(){
+    printf("Articulos con mas stock");
+    for (i = 0; i < 20; i++)
+    {
+        printf("- %s", articulos[i].nombre);
+    }
+}
+
+void montoXArticulo(Articulo articulos[N])
+{
+    int i;
+    float ganancia;
+    for (i = 0; i < N; i++)
+    {
+        ganancia = articulos[i].ventas * articulos[i].precio;
+        printf("- La ganancia total de %s es de: %d\n", articulos[i].nombre, ganancia);
+    }
+}
+
+int main()
+{
     int bandera = 1, opcion, masSieteMil = 0, noStock = 0;
     Articulo articulos[N];
-    while(bandera != 0){
+    while (bandera != 0)
+    {
         menu();
         scanf("%d", &opcion);
-        switch(opcion){
-            case 1:
-                carga(articulos);
+        switch (opcion)
+        {
+        case 1:
+            carga(articulos);
             break;
-            case 2:
-                caja(articulos);
+        case 2:
+            caja(articulos);
             break;
-            case 3:
-                noStockPSieteMil(articulos, masSieteMil, noStock);
+        case 3:
+            noStockPSieteMil(articulos, masSieteMil, noStock);
+            printf("La cantidad de productos sin stock son de: %d \nLa cantidad de productos que salen mas de 7000 son: %d\n", noStock, masSieteMil);
             break;
-         /* case 4:
-                buscarXID(articulos);
+        case 4:
+            mayorStock(articulos);
             break;
-            case 5:
-                verRecTotal(articulos);
-            break; */
-
+        case 5:
+            montoXArticulo(articulos);
+            break;
         }
         printf("Desea hacer otra operacion? 0 para cancelar ");
         scanf("%d", &bandera);
     }
-
 
     return 0;
 }
