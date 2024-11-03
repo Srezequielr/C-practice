@@ -97,6 +97,17 @@ void verRecTotal(struct Articulo articulos[N]){
     return;
 }
 
+// Un local comercial de ventas de repuestos de automotores desea obtener cierta información sobre todas las ventas
+// registradas en un periodo de tiempo dado. Para ello el comercio cuenta con los siguientes datos, almacenados en una
+// estructura, referidos a los 250 artículos que están a la venta: Código, Nombre, Precio Unitario y Stock.
+// Los datos ingresados de cada una de las ventas efectuadas en ese periodo son: Nombre del artículo, Cantidad de
+// unidades vendidas. El ingreso de ventas termina con nombre “FIN”.
+// Se pide realizar un programa en C, que utilizando subprogramas óptimos y estructuras adecuadas permita:
+// a) Procesar las ventas registradas en ese periodo de tiempo
+// b) Mostrar los nombre de aquellos artículos que quedaron con stock nulo.
+// c) Indicar el stock de un artículo cuyo código se ingresa por teclado.
+// d) Indicar el monto total obtenido por las ventas de los productos. 
+
 int main(){
     int bandera = 1, opcion;
     Articulo articulos[N];

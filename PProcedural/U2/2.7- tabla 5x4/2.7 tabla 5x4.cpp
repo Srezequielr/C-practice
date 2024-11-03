@@ -60,6 +60,11 @@ void mayorCien(int tabla[F][C])
     printf("Los numeros registrados mayores a 100 son: %d\n", cont);
 }
 
+// Cargar aleatoriamente una tabla de 5x4 con números enteros y:
+// a) Mostrar la suma de cada una de las filas.
+// b) Calcular el promedio de la tercera columna.
+// c) Decir cuántos números mayores a 100 se ingresaron
+
 int main()
 {
     int tabla[F][C];

@@ -43,6 +43,12 @@ void contarVocales(char str[N]){
     return;
 }
 
+// Dada la frase “Programación Procedural 2023”, leerla desde teclado en una cadena de caracteres y:
+// a) Reemplazar el 2 por un 0 (Solo cambiar ese carácter)
+// b) Copiar la palabra “Programación” a una nueva cadena de caracteres.
+// c) Contar la cantidad de vocales de la frase.
+
+
 int main(){
     char str[N];
     char subStr[N];

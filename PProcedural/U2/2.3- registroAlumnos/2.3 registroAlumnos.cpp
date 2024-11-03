@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define N 3
+#define N 10
 
 struct Alumno{
 char nombre[20];
@@ -43,6 +43,12 @@ void mayorDNI(struct Alumno alumnos[N]){
     printf("Los DNI mayor a 40M son: %d", cont);
     return;
 }
+
+// Generar un arreglo de registros que posea la siguiente información de 10 alumnos de procedural: Nombre, Apellido y
+// DNI.
+// a) Cargar los datos de los alumnos.
+// b) Listar los alumnos cargados.
+// c) Indicar cuántos alumnos tiene DNI mayor a 40 millones.
 
 int main(){
     Alumno alumnos[N];

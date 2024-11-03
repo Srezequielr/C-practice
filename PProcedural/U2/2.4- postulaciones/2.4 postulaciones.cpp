@@ -1,5 +1,5 @@
  #include <stdio.h>
- #define N 5
+ #define N 50
 
  struct Postulantes{
     char nombre[20];
@@ -33,7 +33,7 @@
             cont++;
         }
     }
-    printf("%d mujeres postuladas tienen menos de 30 años \n", cont);
+    printf("%d mujeres postuladas tienen menos de 30 aï¿½os \n", cont);
  }
 
  void edPromVarones(struct Postulantes post[N]){
@@ -45,7 +45,7 @@
         }
     }
     prom = acum / cont;
-    printf("La edad promedio de los varones es de %d años \n", prom);
+    printf("La edad promedio de los varones es de %d aï¿½os \n", prom);
  }
 
  void mosLocalidad(struct Postulantes post[N]){
@@ -59,9 +59,15 @@
     }
  }
 
+// Una agencia de empleo registra los datos de 50 postulantes a un puesto de trabajo. De cada uno registra nombre,
+// sexo, dni, edad y codigo de localidad donde vive (1â€¦19).
+// Se pide que usando funciones para cada Ã­tem, resuelva lo siguiente:
+// a) Indicar cuantas postulantes mujeres tienen menos de 30 aÃ±os.
+// b) Indicar la edad promedio de los postulantes varones.
+// b) Mostrar los nombres de los postulantes y el dni de quienes viven en la localidad 14.
+
  int main(){
     Postulantes post[N];
-
     carga(post);
     mMenores(post);
     edPromVarones(post);

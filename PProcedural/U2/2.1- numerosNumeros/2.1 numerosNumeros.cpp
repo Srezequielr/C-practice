@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 5
+#define N 20
 
 void carga(int arreglo[N]){
     int i;
@@ -35,6 +35,11 @@ void escribirPares(int arreglo[N]){
     printf("La cantidad de numeros pares es de %d", cont);
     return;
 }
+
+// Generar un arreglo con 20 números enteros y codificar un programa en C que permita:
+// a) Indicar si alguno de los números generados es cero.
+// b) Escribir el contenido de las componentes que se encuentren en las posiciones pares.
+// c) Indicar cantidad de números pares que contiene.
 
 int main(){
 int arreglo[N];

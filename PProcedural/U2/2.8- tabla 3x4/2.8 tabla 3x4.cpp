@@ -60,6 +60,12 @@ int mayorDiez(int tabla[F][C])
     return cont;
 }
 
+// Realizar un programa en lenguaje C, que usando funciones óptimas realice lo siguiente:
+// a) Generar y cargar un arreglo bidimensional de enteros de 3x4.
+// b) Mostrar en el main la suma de los elementos con valor impar.
+// c). Ingresar un número de fila y mostrar en el main la cantidad de elementos mayores a 10 (realice una función que
+// devuelva la cantidad al main). 
+
 int main()
 {
     int tabla[F][C], mayorADiez;
