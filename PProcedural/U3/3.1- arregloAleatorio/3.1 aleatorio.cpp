@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#define N 10
+#define N 50
 
 void carga(int arreglo[N])
 {
@@ -75,6 +75,12 @@ void busqueda(int arreglo[N])
         printf("El numero buscado se encuentra en la posicion %d", i);
     }
 }
+
+// Crear un arreglo de 50 números enteros y cargarlo generando cada numero de manera aleatoria.
+// Codificar un programa en C que permita:
+// 1. Indicar en el main si cantidad de números mayores a cero es mayor o igual a la cantidad de números menores a cero.
+// 2. Indicar en el main, la sumatoria de las componentes que se encuentren en las posiciones pares y la sumatoria de las que está en posiciones impares.
+// 3. Leer un número e indicar si se encuentra en el arreglo indicar su posición (puede estar repetido).
 
 int main()
 {
