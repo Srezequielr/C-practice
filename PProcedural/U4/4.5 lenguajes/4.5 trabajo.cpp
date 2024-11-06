@@ -78,6 +78,17 @@ int contRecursivo(int xEncuesta[N], int &xMenosCincoMil, int xMasNueveMil, int i
     return xMasNueveMil;
 }
 
+// Si quieres conseguir un buen trabajo vas a necesitar buenas habilidades. Uno de los perfiles profesionales más demandados son los programadores, pero ¿qué lenguaje de programación merece la pena aprender? Aprender a programar te abrirá puertas a otros empleos. Son muchas las empresas las que valoran esta habilidad, pese a que no sea necesario para el puesto, por la agilidad mental que denota. Por todo ello, la comunidad de desarrolladores Stack Overflow llevó a cabo encuestas sobre las tendencias del sector, sobre cuál de los siguientes lenguajes utilizan.  
+// Esta es a información compartida en una encuesta. Para procesarla se ingresa por cada encuestado el número de lenguaje elegido. 
+// Realizar un programa en C que, utilizando solo funciones recursivas, permita: 
+// a) Generar un arreglo que cuente para cada lenguaje, los encuestados que lo eligieron. 
+// b) Mostrar el/los lenguajes/s que se eligió por menos de 4000 encuestados. 
+// c) Indicar el lenguaje más elegido. (suponer único) 
+// d) Mostrar el total de encuestas realizadas. 
+// e) Mostrar la cantidad de lenguajes que fueron elegidos por menos de 5000 encuestados y cuantos por más de 9000 encuestados (hacer una función recursiva que devuelva las dos cantidades). 
+// f) Realizar el mapa de memoria cuando se invoca a la función construida en el punto d). 
+
+
 int main()
 {
     int encuesta[N], menosCincoMil = 0, masNueveMil = 0, i = 0;

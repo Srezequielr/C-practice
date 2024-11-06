@@ -78,6 +78,13 @@ int busquedaSubArre(int subArre[N], int busqueda, int i, int j)
     }
 }
 
+// Construir un programa en lenguaje C que a través de funciones recursivas resuelva los siguientes ítems: 
+// a) Cargar un arreglo de enteros, de N componentes. 
+// b) Generar un subarreglo con las componentes del arreglo cargado, cuyo valor es mayor o igual al Promedio. 
+// c) Indicar cuantas componentes del subarreglo son mayores al promedio y cuantas iguales a éste.  
+// d) Ingresar un número y decir si se encuentra en el subarreglo. 
+// e) Realice el ítem anterior si el arreglo original estuviera ordenado ascendentemente. 
+
 int main()
 {
     int arre[N], subArre[N], i = 0, prom = 0, j = 0, mayorProm = 0, igualProm = 0, busqueda, bandera;

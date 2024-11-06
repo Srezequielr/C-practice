@@ -39,6 +39,11 @@ void contarPoN(int xArr[N], int i, int &xContP, int &xContN)
     return;
 }
 
+// Dado un arreglo de N componentes enteras hacer en forma recursiva: 
+// a) Cargar el arreglo. 
+// b) Mostrar el arreglo en forma invertida. 
+// c) Decir cuántas componentes son positivas y cuantas negativas. (hacer una función que devuelva ambos resultados). 
+
 int main()
 {
     int arr[N], i = 0, contP = 0, contN = 0;
