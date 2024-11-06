@@ -67,6 +67,14 @@ int *cargaSubArre(int *arre, int n)
     return arre;
 }
 
+// Escribir un programa en lenguaje C que usando funciones permita:
+// a) Crear y cargar 2 arreglos dinámicos de componentes enteras MxM (mismo tamaño) ingresada por teclado.
+// b) Calcular el producto escalar.
+// El producto escalar es una operación donde al multiplicar dos arreglos se obtiene un único valor.
+// A * B = A[0] * B[0] + A[1] * B[1] +…+ A[N-1] * B[N-1]
+// c) Generar una nueva estructura con los valores pares contenidos en uno de los arreglos (realizar un subprograma
+// que solicite memoria para la nueva estructura y la devuelva cargada).
+
 int main()
 {
     int *arre1, *arre2, *subArre, n, i = 0, prodEscalar = 0;
