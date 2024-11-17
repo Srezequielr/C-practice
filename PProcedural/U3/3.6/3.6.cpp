@@ -15,6 +15,26 @@ void cereo(int tabla[M][D])
     }
 }
 
+void carga(int tabla[M][D])
+{
+    int mes, depto;
+
+    printf("Ingrese mes (1-6) para cargar <Cancelar con 0>: ");
+    scanf("%d", &mes);
+
+    while (mes != 0)
+    {
+        printf("Ingresar numero de departamento (1-8): ");
+        scanf("%d", &depto);
+        printf("Ingrese importe recaudado: ");
+        scanf("%d", tabla[mes][depto]);
+        printf("Ingrese mes para cargar <Cancelar con 0>: ");
+        scanf("%d", &mes);
+    }
+}
+
+
+
 // Un supermercado ingresa las ventas de los últimos 6 meses, realizadas en los 8 departamentos de venta que posee.
 // Por cada venta se ingresa mes, departamento e importe. Las ventas no traen ningún orden particular. Realizar un
 // programa en C, que a través de funciones permita:
@@ -30,4 +50,5 @@ int main()
     int tabla[M][D];
 
     cereo(tabla);
+    carga(tabla);
 }
