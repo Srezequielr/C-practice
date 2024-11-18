@@ -1,5 +1,16 @@
 #include <stdio.h>
+#define N 10
 
+struct Promotor{
+    int codSec;
+    char codSec;
+};
+
+struct seguro{
+    char tipo;
+    char nombre[20];
+    float precio;
+};
 
 // Una empresa de seguros procesa la información de las ventas que han realizado sus 10 promotores. De cada uno de los 10 promotores se conoce el código de sector donde trabaja (número entre 30 y 37) codificado: 30: Moto - 31: Auto - 32: Camioneta - 33: Camión - 34: Ómnibus de Corta distancia - 35: Ómnibus de larga distancia - 36: Combis de pasajeros - 37: taxis.
 // De cada seguro (son 3 tipos de seguros distintos) se conoce el tipo (una letra entre “A” y
@@ -11,6 +22,7 @@
 // 3. Dado un número de sector, indicar cuál es el seguro que más se consume.
 // 4. Indicar para cada tipo de seguro, el nombre y el importe total de venta.
 
-int main(){
+int main()
+{
 
 }
