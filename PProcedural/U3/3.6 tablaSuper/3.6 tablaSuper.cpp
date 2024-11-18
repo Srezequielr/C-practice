@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define M 6
-#define D 8
+#define M 3
+#define D 4
 
 void cereo(int tabla[M][D])
 {
@@ -27,13 +27,61 @@ void carga(int tabla[M][D])
         printf("Ingresar numero de departamento (1-8): ");
         scanf("%d", &depto);
         printf("Ingrese importe recaudado: ");
-        scanf("%d", tabla[mes][depto]);
+        scanf("%d", &tabla[mes][depto]);
         printf("Ingrese mes para cargar <Cancelar con 0>: ");
         scanf("%d", &mes);
     }
 }
 
+int menorImporte(int tabla[M][D])
+{
+    int i, j, total, menor = 9999999, numMen;
+    for (j = 0; j < D; j++)
+    {
+        total = 0;
+        for (i = 0; i < M; i++)
+        {
+            total += tabla[i][j];
+        }
+        if (total < menor)
+        {
+            menor = total;
+            numMen = j;
+        }
+    }
+    return j;
+}
 
+int calcProm(int tabla[M][D])
+{
+    int i, j, prom = 0;
+
+    for (i = 0; i < M; i++)
+    {
+        for (j = 0; j < D; j++)
+        {
+            prom += tabla[i][j];
+        }
+    }
+    prom = prom / (M * D);
+    return prom;
+}
+
+void supProm(int tabla[M][D], int prom)
+{
+    int i, j;
+
+    for (i = 0; i < M; i++)
+    {
+        for (j = 0; j < D; j++)
+        {
+            if (tabla[i][j] > prom)
+            {
+                printf("El departamento %d supera el promedio\n", j + 1);
+            }
+        }
+    }
+}
 
 // Un supermercado ingresa las ventas de los últimos 6 meses, realizadas en los 8 departamentos de venta que posee.
 // Por cada venta se ingresa mes, departamento e importe. Las ventas no traen ningún orden particular. Realizar un
@@ -47,8 +95,13 @@ void carga(int tabla[M][D])
 
 int main()
 {
-    int tabla[M][D];
+    int tabla[M][D], menorVenta, prom;
 
     cereo(tabla);
     carga(tabla);
+    menorVenta = menorImporte(tabla);
+    printf("El departamento que registro menos importe es el numero %d\n", menorVenta + 1);
+    prom = calcProm(tabla);
+    printf("El promedio de ventas es de %d\n", prom);
+    supProm(tabla, prom);
 }
