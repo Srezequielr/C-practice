@@ -72,33 +72,12 @@ void carga(Mundial mundiales[N])
     }
 }
 
-void cargarSubList(Mundial mundiales[N], Puntero &xp)
-{
-    Puntero nuevoNodo;
-    int i;
-    for (i = 0; i < N; i++)
-    {
-        while (mundiales[i].jugadores != NULL)
-        {
-            if (mundiales[i].jugadores->dato.goles >= 3)
-            {
-                nuevoNodo = (Puntero)malloc(sizeof(struct Nodo));
-
-                nuevoNodo->dato = mundiales[i].jugadores->dato;
-
-                nuevoNodo->siguiente = xp;
-                xp = nuevoNodo;
-            }
-        }
-    }
-}
-
 void contArgYGoles(Mundial mundiales[N], int &argentinos, int &cincoGoles)
 {
     char pais[20];
     int i = 0;
     Puntero xp;
-    printf("Ingrese pais anfitrion de mundial: ");
+    printf("Ingrese pais anfitrion de mundial a buscar: ");
     gets(pais);
     while (strcmp(pais, mundiales[i].pais) != 0 && i < 0)
     {
@@ -122,6 +101,29 @@ void contArgYGoles(Mundial mundiales[N], int &argentinos, int &cincoGoles)
                 argentinos++;
             }
             xp = xp->siguiente;
+        }
+    }
+}
+
+void cargarSubList(Mundial mundiales[N], Puntero &xp)
+{
+    Puntero nuevoNodo, bandera;
+    int i;
+    for (i = 0; i < N; i++)
+    {
+        bandera = mundiales[i].jugadores;
+        while (mundiales[i].jugadores != NULL)
+        {
+            if (mundiales[i].jugadores->dato.goles >= 3)
+            {
+                nuevoNodo = (Puntero)malloc(sizeof(struct Nodo));
+
+                nuevoNodo->dato = mundiales[i].jugadores->dato;
+
+                nuevoNodo->siguiente = xp;
+                xp = nuevoNodo;
+            }
+            bandera = mundiales[i].jugadores->siguiente;
         }
     }
 }
@@ -155,11 +157,11 @@ void eliminarJugador(Mundial mundiales[N])
             {
                 anterior->siguiente = actual->siguiente;
                 free(actual);
-                printf("El libro se elimino correctamente");
+                printf("El jugador se elimino correctamente");
             }
             else
             {
-                printf("El libro no se encontro");
+                printf("El jugador no se encontro");
             }
         }
     }
