@@ -24,8 +24,7 @@ void crearLista(Puntero &xp)
     xp = NULL;
 }
 
-void 
-insertar(Puntero &xp)
+void insertar(Puntero &xp)
 {
     int plan;
     Puntero nuevoNodo;
@@ -88,6 +87,15 @@ void mostrar(Puntero xp)
         xp = xp->siguiente;
     }
 }
+
+// Una multinacional dedicada a la venta de automotores cuenta con la información de los 10 planes de financiación de
+// las distintas unidades. Se cuenta con la siguiente información de cada adjudicatario a un plan: Numero de plan, DNI,
+// Nombre y Apellido, cantidad de cuotas pagadas.
+// Se pide:
+// a) Cargar en una estructura de datos adecuada la información que se posee.
+// b) Generar una nueva estructura con información de los planes que cuenten con adjudicatarios aptos para licitar
+// un vehículo, es decir, con más de 30 cuotas pagadas.
+// c) Mostrar el mapa de memoria, después de ejecutar la función que carga los datos.
 
 int main()
 {
