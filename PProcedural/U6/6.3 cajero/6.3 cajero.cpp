@@ -1,12 +1,3 @@
-// Se registra la información de las operaciones realizadas por un cajero durante un fin de semana. De cada operación se conoce: numero de operación, importe y tipo de operación (1: cobro; 2: pago).
-// Utilizando funciones óptimas realice lo siguiente:
-// a) Genere una lista con la información de las operaciones.
-// b) Indique cual es el/los numero/s de mayor importe cobrado. (usar una función recursiva)
-// c) Con la información de la lista genere un archivo con los datos de los pagos realizados.
-// d) Eliminar la lista generada.
-// e) Indicar en el principal el importe promedio de los pagos realizados.
-// f) Eliminar del archivo los pagos menores a $500.
-
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -124,6 +115,15 @@ void eliminarPagos(FILE *original, FILE *nuevo)
     delete ("Importes.dat");
     rename("Nuevo.dat", "Importes.dat");
 }
+
+// Se registra la información de las operaciones realizadas por un cajero durante un fin de semana. De cada operación se conoce: numero de operación, importe y tipo de operación (1: cobro; 2: pago).
+// Utilizando funciones óptimas realice lo siguiente:
+// a) Genere una lista con la información de las operaciones.
+// b) Indique cual es el/los numero/s de mayor importe cobrado. (usar una función recursiva)
+// c) Con la información de la lista genere un archivo con los datos de los pagos realizados.
+// d) Eliminar la lista generada.
+// e) Indicar en el principal el importe promedio de los pagos realizados.
+// f) Eliminar del archivo los pagos menores a $500.
 
 int main()
 {
